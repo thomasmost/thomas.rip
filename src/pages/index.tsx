@@ -5,12 +5,17 @@ import Title from '@/components/Title';
 
 import { Layout } from '@/components/Layout';
 import { Headstone } from '@/components/Headstone';
+import styled from '@emotion/styled';
 
 const inscriptions = [
   `ya missed him`,
   `He died as he lived, dabbing`,
   `In retrospect, it WAS a bad idea`,
 ];
+
+const Main = styled.main`
+  font-family: Newsreader;
+`;
 
 const Home: React.FC<PageProps> = () => {
   const yod = new Date().getFullYear() + Math.floor(Math.random() * 1000);
@@ -20,15 +25,14 @@ const Home: React.FC<PageProps> = () => {
 
   return (
     <Layout>
-      <main>
+      <Main>
         <Title />
-        <p>Thomas Constantine Moore is dead.</p>
         <Headstone yod={yod} inscription={randomInscription} />
         <p>
           Follow me on Twitter (
           <a href="https://twitter.com/thomascmost">@thomascmost</a>)
         </p>
-      </main>
+      </Main>
     </Layout>
   );
 };

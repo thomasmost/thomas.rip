@@ -108,11 +108,16 @@ export const Headstone: React.FC<HeadstoneProps> = ({ yod, inscription }) => (
     <g id="text">
       <text
         className="cls-5"
-        transform="matrix(0.97, -0.15, -0.02, 1, 848.23, 386.05)"
+        transform="matrix(0.97, -0.15, -0.02, 1, 848.23, 340.00)"
       >
-        THOMAS CONST-
-        <tspan x="6.63" y="52.8">
-          ANTINE MOORE
+        <tspan x="78" y="0">
+          THOMAS
+        </tspan>
+        <tspan x="18" y="52">
+          CONSTANTINE
+        </tspan>
+        <tspan x="100" y="104">
+          MOORE
         </tspan>
       </text>
       <text

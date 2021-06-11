@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageProps } from 'gatsby';
+import { Link, PageProps } from 'gatsby';
 
 import Title from '@/components/Title';
 
@@ -29,8 +29,8 @@ const Home: React.FC<PageProps> = () => {
         <Title />
         <Headstone yod={yod} inscription={randomInscription} />
         <p>
-          Follow me on Twitter (
-          <a href="https://twitter.com/thomascmost">@thomascmost</a>)
+          <Link to="/about">What&apos;s happening</Link> • Follow me on Twitter
+          (<a href="https://twitter.com/thomascmost">@thomascmost</a>)
         </p>
       </Main>
     </Layout>

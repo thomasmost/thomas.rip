@@ -5,6 +5,11 @@ import styled from '@emotion/styled';
 const Wrapper = styled(`div`)`
   padding: 20px 40px;
 `;
+
+const Main = styled.main`
+  font-family: Newsreader;
+`;
+
 export const Layout: React.FC = ({ children }) => (
   <Wrapper>
     <Global

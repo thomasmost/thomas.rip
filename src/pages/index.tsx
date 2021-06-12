@@ -9,12 +9,15 @@ import styled from '@emotion/styled';
 
 const inscriptions = [
   `ya missed him`,
-  `He died as he lived, dabbing`,
-  `In retrospect, it WAS a bad idea`,
+  `He died as he lived,
+   dabbing`,
+  `In retrospect,
+  it WAS a bad idea`,
 ];
 
-const Main = styled.main`
-  font-family: Newsreader;
+const HeadstoneWrapper = styled.div`
+  margin: auto;
+  max-width: 1200px;
 `;
 
 const Home: React.FC<PageProps> = () => {
@@ -25,14 +28,10 @@ const Home: React.FC<PageProps> = () => {
 
   return (
     <Layout>
-      <Main>
-        <Title />
+      <Title />
+      <HeadstoneWrapper>
         <Headstone yod={yod} inscription={randomInscription} />
-        <p>
-          <Link to="/about">What&apos;s happening</Link> • Follow me on Twitter
-          (<a href="https://twitter.com/thomascmost">@thomascmost</a>)
-        </p>
-      </Main>
+      </HeadstoneWrapper>
     </Layout>
   );
 };

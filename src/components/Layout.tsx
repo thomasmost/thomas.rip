@@ -1,6 +1,7 @@
 import React from 'react';
 import { Global, css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { Footer } from './Footer';
 
 const Wrapper = styled(`div`)`
   padding: 20px 40px;
@@ -32,6 +33,7 @@ export const Layout: React.FC = ({ children }) => (
         }
       `}
     />
-    {children}
+    <Main>{children}</Main>
+    <Footer />
   </Wrapper>
 );

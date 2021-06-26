@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from '@emotion/styled';
 
 const StyledSVG = styled.svg`
@@ -7,8 +7,7 @@ const StyledSVG = styled.svg`
   }
   .cls-2,
   .cls-5,
-  .cls-6 {
-    fill: #231f20;
+  .cls-6 {fil
   }
   .cls-3 {
     fill: #19441f;
@@ -35,10 +34,19 @@ const StyledSVG = styled.svg`
 type HeadstoneProps = {
   yod: number;
   inscription: string;
+  imageref: React.MutableRefObject<SVGSVGElement>;
 };
 
-export const Headstone: React.FC<HeadstoneProps> = ({ yod, inscription }) => (
-  <StyledSVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 1088.35">
+export const Headstone: React.FC<HeadstoneProps> = ({
+  yod,
+  inscription,
+  imageref,
+}) => (
+  <StyledSVG
+    ref={imageref}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 2048 1088.35"
+  >
     <g id="dirt">
       <path
         className="cls-1"
@@ -87,11 +95,12 @@ export const Headstone: React.FC<HeadstoneProps> = ({ yod, inscription }) => (
     </g>
     <g id="headstone">
       <path
+        fill="#848484"
         className="cls-4"
         d="M1295.75,697.23s-58.39,86.11-174.27,106.17S816,826.45,816,826.45q.06-80.25.1-160.49.1-136.8.18-273.6c0-37.63.87-78,22.65-108.66,15.19-21.4,45.34-28,68.07-41.09,52.56-30.34,93.32-30,172.75-45.27,19.53-3.75,87.87-10,120.22,2.72q4.08,4.66,7.75,9.61c31.1,41.8,41.35,97.28,49.2,149.71Q1282.08,527.58,1295.75,697.23Z"
       />
       <path
-        className="cls-4"
+        fill="#848484"
         d="M1292.56,688.56Q1278.91,519,1253.72,350.71c-9-59.92-21.08-123.84-63.87-166.74-47.4-47.51-105.34-84.23-202.82-80.75-67.07,2.39-171,32-223.66,73.59-25,19.7-50.2,40.73-64.8,69-17.94,34.69-17.58,75.61-16.8,114.65,1.92,96.23,3.84,242.45,5.76,338.68L816,826.45"
       />
       <path
@@ -118,14 +127,14 @@ export const Headstone: React.FC<HeadstoneProps> = ({ yod, inscription }) => (
           MOORE
         </tspan>
       </text>
-      <text
+      <g
         className="cls-5 inscription"
         // dominantBaseline="middle"
         // textAnchor="middle"
         transform="matrix(0.97, -0.15, -0.02, 1, 1040, 585.65)"
       >
-        {inscription}
-      </text>
+        <text>{inscription}</text>
+      </g>
       <text
         className="cls-6"
         transform="matrix(0.97, -0.15, -0.02, 1, 964.4, 492.7)"

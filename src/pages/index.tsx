@@ -12,7 +12,6 @@ import styled from '@emotion/styled';
 
 const Controls = styled.div`
   display: flex;
-  margin-bottom: 20px;
   flex-wrap: wrap;
   @media (max-width: 700px) {
     > * {
@@ -63,6 +62,15 @@ const inscriptions = [
   `Shoulda worn a helmet!`,
   `Shoulda eaten more greens!`,
   `Should've drank less!`,
+  `He will be missed (NOT!)`,
+  `He is survived by men named Garrison, unfortunately`,
+  `He died building this website`,
+  `He saved the world, in his head, a lot.`,
+  `#bye!`,
+  `#[PLACEHOLDER, hashtag still in comittee!]`,
+  `"Life is a highway to the bottom of a hole."`,
+  `Quicksand, if you can believe it!`,
+  `Quicksand! QUICKSAND! In ${new Date().getFullYear()}!!!`,
   `He died as he lived, in a weird way that no one really understood`,
   `It was an accident, probably, or possibly it wasn't an accident and it was fate, or destiny, or something even more sinister`,
 ];

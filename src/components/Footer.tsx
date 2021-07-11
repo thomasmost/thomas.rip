@@ -4,6 +4,10 @@ import styled from '@emotion/styled';
 
 const Nav = styled.nav`
   font-family: Newsreader;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  line-height: 2.5rem;
 `;
 
 export const Footer: React.FC = () => (

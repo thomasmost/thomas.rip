@@ -5,12 +5,17 @@ import { Helmet } from 'react-helmet';
 import { Footer } from './Footer';
 
 const Wrapper = styled(`div`)`
-  padding: 20px 40px;
+  padding: 0 40px;
+  position: relative;
+  min-height: 100vh;
 `;
 
 const Main = styled.main`
   font-family: Newsreader;
   min-height: 640px;
+  max-height: 90%;
+  overflow: scroll;
+  padding-bottom: 2.5rem;
 `;
 
 export const Layout: React.FC = ({ children }) => (

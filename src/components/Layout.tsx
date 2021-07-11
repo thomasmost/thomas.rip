@@ -29,7 +29,7 @@ export const Layout: React.FC = ({ children }) => (
       <meta property="og:title" content="Thomas Constantine Moore is dead." />
       <meta
         property="og:description"
-        content={`(Disclaimer: Whether Thomas is actually dead is a sort of quantum unknowability, a sort of "Schrodinger's Cat" sitation, if you will. How to know if Thomas is actually dead? How do we know that anything is true at all? I'm afraid I can't help you!)`}
+        content={`(Disclaimer: Whether Thomas is actually dead is a quantum unknowability, a sort of "Schrodinger's Cat" sitation, if you will. How to know if Thomas is actually dead? How do we know that anything is true at all? I'm afraid I can't help you!)`}
       />
       <meta property="og:image" content="https://www.thomas.rip/card.png" />
 

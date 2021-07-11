@@ -19,21 +19,24 @@ exports.handler = async (event /* context */) => {
     console.log('posting image');
     const res = await new Promise((resolve, reject) => {
       client.post(
-        'media/upload.json?media_category=tweet_image',
+        'media/upload',
+        // 'media/upload.json?media_category=tweet_image',
         {
-          media_data: dataUrl,
+          media_data: Buffer.from(dataUrl, 'base64'),
         },
-        (err, data, response) => {
+        async (err, data, response) => {
           if (err) {
             reject(err);
           }
+          // const newdata = await response.json();
           // console.log(response);
           console.log('data');
-          console.log(data);
-          console.log('response data');
-          console.log(response.data);
-          console.log('response body');
-          console.log(response.body);
+          console.log(data && data.media_id_string);
+          // console.log('response');
+          // console.log(response);
+          console.log('response status');
+          console.log(response.statusCode);
+          console.log(response.statusMessage);
           resolve(response);
         },
       );

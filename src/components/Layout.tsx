@@ -23,7 +23,7 @@ export const Layout: React.FC = ({ children }) => (
     <Helmet>
       <meta charSet="utf-8" />
       <title>Thomas Moore is Dead</title>
-      <meta name="twitter:card" content="Thomas Constantine Moore is dead." />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content="@thomascmost" />
       <meta property="og:url" content="https://www.thomas.rip" />
       <meta property="og:title" content="Thomas Constantine Moore is dead." />

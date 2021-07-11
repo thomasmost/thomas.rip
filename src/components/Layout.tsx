@@ -9,6 +9,7 @@ const Wrapper = styled(`div`)`
 
 const Main = styled.main`
   font-family: Newsreader;
+  min-height: 640px;
 `;
 
 export const Layout: React.FC = ({ children }) => (

@@ -13,6 +13,17 @@ import styled from '@emotion/styled';
 const Controls = styled.div`
   display: flex;
   margin-bottom: 20px;
+  flex-wrap: wrap;
+  @media (max-width: 700px) {
+    > * {
+      &:first-child {
+        margin-top: 50px;
+      }
+      margin-right: 0;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
 `;
 
 const Button = styled.button`
@@ -51,6 +62,33 @@ const inscriptions = [
   `It was an accident, probably, or possibly it wasn't an accident and it was fate, or destiny, or something even more sinister`,
 ];
 
+const intros = [
+  `Great news everyone!`,
+  `Amaing news everyone!`,
+  `Big news everyone!`,
+  `BIG news everyone!`,
+  `Big if true!`,
+  `Big if true!!!`,
+  `HUGE news y'all`,
+  `Excited to finally talk about this...`,
+  `So excited to finally be able to talk about this!`,
+  `Omg!`,
+];
+
+const deaths = [
+  `is dead`,
+  `is dead`,
+  `is dead`,
+  `is dead`,
+  `is dead`,
+  `died`,
+  `kicked the bucket`,
+  `is no more`,
+  `finally shuffled off the mortal coil`,
+  `joined his ancestors`,
+  `went out to pasture`,
+];
+
 const HeadstoneWrapper = styled.div`
   margin: auto;
   max-width: 1200px;
@@ -63,14 +101,7 @@ const Input = styled.input`
   height: 44px;
   margin-right: 20px;
   outline: 0;
-  padding: 0 10px;
-`;
-const Label = styled.label`
-  display: inline-block;
-  margin-right: 20px;
-  line-height: 44px;
-  font-family: Arial;
-  font-size: 1.2em;
+  padding: 0 18px;
 `;
 
 function svgString2Image(
@@ -149,12 +180,18 @@ const resizeText = ({
   });
 };
 
+const getRandFromRng = (rng: string[]) => {
+  const optionCount = rng.length;
+  return rng[Math.floor(Math.random() * optionCount)];
+};
+
+const yod = new Date().getFullYear() + Math.floor(Math.random() * 1000);
+const intro = getRandFromRng(intros);
+const death = getRandFromRng(deaths);
+
 const Home: React.FC<PageProps> = () => {
   const imageref = useRef<SVGSVGElement>();
-  const yod = new Date().getFullYear() + Math.floor(Math.random() * 1000);
-  const optionCount = inscriptions.length;
-  const randomInscription =
-    inscriptions[Math.floor(Math.random() * optionCount)];
+  const randomInscription = getRandFromRng(inscriptions);
 
   const [inscription, setInscription] = useState<string>(randomInscription);
 
@@ -170,15 +207,14 @@ const Home: React.FC<PageProps> = () => {
   const onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     const { value } = e.currentTarget;
     if (value === ``) {
-      const newRandomInscription =
-        inscriptions[Math.floor(Math.random() * optionCount)];
+      const newRandomInscription = getRandFromRng(inscriptions);
       return setInscription(newRandomInscription);
     }
     return setInscription(value);
   };
   // randomize 'is dead' and 'great news'
 
-  const tweet = `Great news everyone! @thomascmost is dead!%0a${inscription}`;
+  const tweet = `${intro} @thomascmost ${death}!%0a${inscription}`;
 
   async function generateImage() {
     window.open(`https://twitter.com/intent/tweet?text=${tweet}`);
@@ -219,8 +255,11 @@ const Home: React.FC<PageProps> = () => {
         <Headstone yod={yod} inscription={inscription} imageref={imageref} />
       </HeadstoneWrapper>
       <Controls>
-        <Label>Make your own!</Label>
-        <Input maxLength={144} onChange={onChange} />
+        <Input
+          placeholder="Make your own!"
+          maxLength={144}
+          onChange={onChange}
+        />
         {/* <ButtonLink
         href={`https://twitter.com/intent/tweet?text=${tweet}`}
         target="_blank"

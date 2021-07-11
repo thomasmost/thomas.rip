@@ -74,7 +74,7 @@ const intros = [
   `BIG news everyone!`,
   `Big if true!`,
   `Big if true!!!`,
-  `HUGE news y'all`,
+  `HUGE news y'all.`,
   `Excited to finally talk about this...`,
   `So excited to finally be able to talk about this!`,
   `Omg!`,

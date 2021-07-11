@@ -133,7 +133,20 @@ export const Headstone: React.FC<HeadstoneProps> = ({
         // textAnchor="middle"
         transform="matrix(0.97, -0.15, -0.02, 1, 1040, 585.65)"
       >
-        <text>{inscription}</text>
+        <foreignObject x="-200" y="-48" width="400" height="200">
+          <div
+            style={{
+              height: `200px`,
+              width: `400px`,
+              color: `black`,
+              textAlign: `center`,
+              overflowWrap: `break-word`,
+            }}
+            className="inscription-text"
+          >
+            {inscription}
+          </div>
+        </foreignObject>
       </g>
       <text
         className="cls-6"

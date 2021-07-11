@@ -60,6 +60,10 @@ const inscriptions = [
   `He fucked up`,
   `He fucked up real bad`,
   `He did a bad job at hang-gliding`,
+  `Shoulda worn a helmet!`,
+  `Shoulda eaten more greens!`,
+  `Should've drank less!`,
+  `He died as he lived, in a weird way that no one really understood`,
   `It was an accident, probably, or possibly it wasn't an accident and it was fate, or destiny, or something even more sinister`,
 ];
 
@@ -216,7 +220,7 @@ const Home: React.FC<PageProps> = () => {
   };
   // randomize 'is dead' and 'great news'
 
-  const tweet = `${intro} @thomascmost ${death}!%0a${inscription}`;
+  const tweet = `${intro} @thomascmost ${death}!%0a${inscription}%0a%0a🪦 Find out more at thomas.rip`;
 
   async function generateImage() {
     window.open(`https://twitter.com/intent/tweet?text=${tweet}`);

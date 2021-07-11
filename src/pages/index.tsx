@@ -18,6 +18,7 @@ const Controls = styled.div`
     > * {
       &:first-child {
         margin-top: 50px;
+        margin-right: 0;
       }
       margin-right: 0;
       width: 100%;
@@ -102,6 +103,7 @@ const Input = styled.input`
   margin-right: 20px;
   outline: 0;
   padding: 0 18px;
+  min-width: calc(50% - 200px);
 `;
 
 function svgString2Image(

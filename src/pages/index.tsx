@@ -87,6 +87,7 @@ const inscriptions = [
   `He saved the world, in his head, a lot.`,
   `#bye!`,
   `"Life is a highway to the bottom of a hole."`,
+  `Drowned surprisingly quickly in some kind of sand`,
   `Quicksand, if you can believe it!`,
   `Quicksand! QUICKSAND! In ${new Date().getFullYear()}!!!`,
   `He died as he lived, in a weird way that no one really understood`,

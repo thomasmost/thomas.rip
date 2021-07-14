@@ -239,12 +239,24 @@ const Home: React.FC<PageProps> = () => {
 
   const regenerateText = () => {
     const newRandomInscription = getRandFromRng(inscriptions);
+    if (typeof window !== `undefined` && (window as any).gtag) {
+      (window as any).gtag(`event`, `click`, {
+        action: `regen`,
+        newRandomInscription,
+      });
+    }
     return setInscription(newRandomInscription);
   };
 
   const tweet = `${intro} @thomascmost ${death}!%0a${inscription}%0a%0a🪦 Find out more at thomas.rip`;
 
   async function generateImage() {
+    if (typeof window !== `undefined` && (window as any).gtag) {
+      (window as any).gtag(`event`, `click`, {
+        action: `tweet`,
+        tweet,
+      });
+    }
     window.open(`https://twitter.com/intent/tweet?text=${tweet}`);
     // try {
     //   const htmlString = ReactDOMServer.renderToString(

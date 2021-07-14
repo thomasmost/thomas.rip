@@ -67,7 +67,6 @@ const inscriptions = [
   `He died building this website`,
   `He saved the world, in his head, a lot.`,
   `#bye!`,
-  `#[PLACEHOLDER, hashtag still in comittee!]`,
   `"Life is a highway to the bottom of a hole."`,
   `Quicksand, if you can believe it!`,
   `Quicksand! QUICKSAND! In ${new Date().getFullYear()}!!!`,

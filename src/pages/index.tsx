@@ -40,7 +40,17 @@ const Button = styled.button`
   transition: 0.5s;
   &:hover,
   &:focus {
-    background-color: #33aaf3;
+    background-color: #44bbf3;
+  }
+`;
+
+const RefreshButton = styled(Button)`
+  padding: 10px;
+  margin-right: 20px;
+  background-color: #19441f;
+  &:hover,
+  &:focus {
+    background-color: #33662f;
   }
 `;
 
@@ -114,7 +124,7 @@ const Input = styled.input`
   margin-right: 20px;
   outline: 0;
   padding: 0 18px;
-  min-width: calc(50% - 200px);
+  min-width: calc(50% - 230px);
 `;
 
 function svgString2Image(
@@ -227,6 +237,11 @@ const Home: React.FC<PageProps> = () => {
   };
   // randomize 'is dead' and 'great news'
 
+  const regenerateText = () => {
+    const newRandomInscription = getRandFromRng(inscriptions);
+    return setInscription(newRandomInscription);
+  };
+
   const tweet = `${intro} @thomascmost ${death}!%0a${inscription}%0a%0a🪦 Find out more at thomas.rip`;
 
   async function generateImage() {
@@ -278,6 +293,19 @@ const Home: React.FC<PageProps> = () => {
         target="_blank"
         rel="noreferrer"
       > */}
+        <RefreshButton type="button" onClick={() => regenerateText()}>
+          <SVG
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="white"
+              d="M9 12l-4.463 4.969-4.537-4.969h3c0-4.97 4.03-9 9-9 2.395 0 4.565.942 6.179 2.468l-2.004 2.231c-1.081-1.05-2.553-1.699-4.175-1.699-3.309 0-6 2.691-6 6h3zm10.463-4.969l-4.463 4.969h3c0 3.309-2.691 6-6 6-1.623 0-3.094-.65-4.175-1.699l-2.004 2.231c1.613 1.526 3.784 2.468 6.179 2.468 4.97 0 9-4.03 9-9h3l-4.537-4.969z"
+            />
+          </SVG>
+        </RefreshButton>
         <Button type="button" onClick={() => generateImage()}>
           <SVG
             xmlns="http://www.w3.org/2000/svg"

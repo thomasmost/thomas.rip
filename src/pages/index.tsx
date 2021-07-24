@@ -92,6 +92,14 @@ const inscriptions = [
   `Quicksand! QUICKSAND! In ${new Date().getFullYear()}!!!`,
   `He died as he lived, in a weird way that no one really understood`,
   `It was an accident, probably, or possibly it wasn't an accident and it was fate, or destiny, or something even more sinister`,
+  `Bear Attack!`,
+  `Bears!`,
+  `Dissolved at Yellowstone`,
+  `Gored by a bison: they're more dangerous than they seem!`,
+  `Chased down by an elk`,
+  `Eaten as vengeance`,
+  `Killed by a rival Thomas`,
+  `Killed in a duel with his subconscious`,
 ];
 
 const intros = [
